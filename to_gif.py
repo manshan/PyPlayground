@@ -1,14 +1,13 @@
-#download file
-#change to gif
+# download file
+# change to gif
 # install moviepy(not work with newest version pillow, need to modify the code),pillow, pygame(preview doesn't work well)
+
 from moviepy.editor import *
 import time
 import os
 import sys
 
 def togif(source, starttime, endtime):
-# how to use the file name just downloaded as source
-#    source = sys.argv[2]
     start_time = tuple(map(lambda x:float(x), starttime.split(':')))
     end_time = tuple(map(lambda x:float(x), endtime.split(':')))
     clip = VideoFileClip(source).subclip(start_time, end_time).resize(0.3)
